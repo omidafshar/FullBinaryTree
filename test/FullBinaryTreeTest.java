@@ -8,7 +8,13 @@ import static org.junit.Assert.assertTrue;
 public class FullBinaryTreeTest {
 
     @Test
-    public void nullBinaryTreeIsFullBinaryTree() {
+    public void nullNodeIsFullBinaryTree() {
         assertTrue(Node.isFullBinaryTree(null));
+    }
+
+    @Test
+    public void nodeWithZeroChildrenIsFullBinaryTree() {
+        Node n = new Node();
+        assertTrue(Node.isFullBinaryTree(n));
     }
 }
