@@ -1,5 +1,5 @@
 /**
- * Created by omidafshar on 4/24/18.
+ * Job: Understands a node in a binary tree.
  */
 public class Node {
 
@@ -18,6 +18,6 @@ public class Node {
 
     public static boolean isFullBinaryTree(Node n) {
         if (n == null) return true;
-        return n.leftChild == null && n.rightChild == null;
+        return (n.leftChild == null && n.rightChild == null) || (n.leftChild != null && n.rightChild != null);
     }
 }
