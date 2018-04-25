@@ -111,4 +111,54 @@ public class FullBinaryTreeTest {
         right.setRightChild(grandchildRight);
         assertTrue(Node.isFullBinaryTree(n));
     }
+
+    @Test
+    public void leftChildNodeFullRightNotFullIsNotFullBinaryTree() {
+        Node n = new Node();
+        Node left = new Node();
+        Node right = new Node();
+        Node leftgrandchildLeft = new Node();
+        Node leftgrandchildRight = new Node();
+        Node rightgrandchildLeft = new Node();
+        n.setLeftChild(left);
+        n.setRightChild(right);
+        left.setLeftChild(leftgrandchildLeft);
+        left.setRightChild(leftgrandchildRight);
+        right.setLeftChild(rightgrandchildLeft);
+        assertFalse(Node.isFullBinaryTree(n));
+    }
+
+    @Test
+    public void rightChildNodeFullLeftNotFullIsNotFullBinaryTree() {
+        Node n = new Node();
+        Node left = new Node();
+        Node right = new Node();
+        Node leftgrandchildLeft = new Node();
+        Node rightgrandchildLeft = new Node();
+        Node rightgrandchildRight = new Node();
+        n.setLeftChild(left);
+        n.setRightChild(right);
+        left.setLeftChild(leftgrandchildLeft);
+        right.setLeftChild(rightgrandchildLeft);
+        right.setRightChild(rightgrandchildRight);
+        assertFalse(Node.isFullBinaryTree(n));
+    }
+
+    @Test
+    public void bothChildNodesFullIsFullBinaryTree() {
+        Node n = new Node();
+        Node left = new Node();
+        Node right = new Node();
+        Node leftgrandchildLeft = new Node();
+        Node leftgrandchildRight = new Node();
+        Node rightgrandchildLeft = new Node();
+        Node rightgrandchildRight = new Node();
+        n.setLeftChild(left);
+        n.setRightChild(right);
+        left.setLeftChild(leftgrandchildLeft);
+        left.setRightChild(leftgrandchildRight);
+        right.setLeftChild(rightgrandchildLeft);
+        right.setRightChild(rightgrandchildRight);
+        assertTrue(Node.isFullBinaryTree(n));
+    }
 }
