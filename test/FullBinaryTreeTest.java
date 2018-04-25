@@ -47,4 +47,18 @@ public class FullBinaryTreeTest {
         left.setLeftChild(grandchild);
         assertFalse(Node.isFullBinaryTree(n));
     }
+
+    @Test
+    public void childNodeWithTwoChildrenIsFullBinaryTree() {
+        Node n = new Node();
+        Node left = new Node();
+        Node right = new Node();
+        Node grandchildLeft = new Node();
+        Node grandchildRight = new Node();
+        n.setLeftChild(left);
+        n.setRightChild(right);
+        left.setLeftChild(grandchildLeft);
+        left.setRightChild(grandchildRight);
+        assertTrue(Node.isFullBinaryTree(n));
+    }
 }
