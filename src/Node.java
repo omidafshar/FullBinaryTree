@@ -18,6 +18,7 @@ public class Node {
 
     public static boolean isFullBinaryTree(Node n) {
         if (n == null) return true;
-        return (n.leftChild == null && n.rightChild == null) || (n.leftChild != null && n.rightChild != null);
+        if (n.leftChild == null) return n.rightChild == null;
+        return n.rightChild != null && isFullBinaryTree(n.leftChild) && isFullBinaryTree(n.rightChild);
     }
 }
