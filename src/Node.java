@@ -4,15 +4,12 @@
 public class Node {
 
 
-    private Node leftChild = null;
+    private Node leftChild;
 
-    private Node rightChild = null;
+    private Node rightChild;
 
-    public void setLeftChild(Node left) {
+    public Node(Node left, Node right) {
         leftChild = left;
-    }
-
-    public void setRightChild(Node right) {
         rightChild = right;
     }
 
